@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd">
+ 
+ <bean id="user" class="CaseStudy1.OnlineShoping.User">
+ <property name="username" value="smita"></property>
+ <property name="email" value="smita@gmail.com"></property>
+ <property name="password" value="password"></property>
+ <property name="shipping_address" value="cidco"></property>
+ <property name="billing_address" value="aurangabad"></property>
+ </bean>
+ 
+<bean id="product" class="CaseStudy1.OnlineShoping.Product">
+ <property name="product_name" value="Laptop"/>
+ <property name="price" value="45000"/>
+ <property name="quantity_in_stock" value="10"/>
+ <property name="imagelocation" value="abc/xyz/pqr"/>
+</bean>
+ 
+ <bean id="cart" class="CaseStudy1.OnlineShoping.Cart">
+ <property name="total_amount" value="3000"/>
+ <property name="Status" value="true"/>
+ <property name="ConfirmOrder" value="true"/>
+ <property name="productList">
+ <list>
+ <ref bean="product1"/>
+ <ref bean="product2"/>
+ <ref bean="product3"/>
+ </list>
+ </property>
+ </bean>
+ 
+ 
+<bean id="product1" class="CaseStudy1.OnlineShoping.Product">
+ <constructor-arg type="java.lang.String" value="Mobile"/>
+ <constructor-arg type="double" value="15000"/>
+ <constructor-arg type="int" value="20"/>
+  <constructor-arg type="java.lang.String" value="ABC"/>
+ </bean>
+ 
+ <bean id="product2" class="CaseStudy1.OnlineShoping.Product">
+ <constructor-arg type="java.lang.String" value="HeadPhone"/>
+ <constructor-arg type="double" value="3000"/>
+ <constructor-arg type="int" value="15"/>
+  <constructor-arg type="java.lang.String" value="xyz"/>
+ </bean>
+ 
+ <bean id="product3" class="CaseStudy1.OnlineShoping.Product">
+ <constructor-arg type="java.lang.String" value="Watch"/>
+ <constructor-arg type="double" value="2500"/>
+ <constructor-arg type="int" value="05"/>
+  <constructor-arg type="java.lang.String" value="30"/>
+ </bean>
+ 
+ <bean id="cart1" class="CaseStudy1.OnlineShoping.Cart">
+ <property name="total_amount" value="4000"/>
+ <property name="Status" value="true"/>
+ <property name="ConfirmOrder" value="false"/>
+ <property name="productList">
+ <list>
+ <ref bean="product4"/>
+ <ref bean="product5"/>
+ <ref bean="product6"/>
+ </list>
+ </property>
+ </bean>
+ 
+ <bean id="product4" class="CaseStudy1.OnlineShoping.Product">
+ <constructor-arg type="java.lang.String" value="Top"/>
+ <constructor-arg type="double" value="900"/>
+ <constructor-arg type="int" value="45"/>
+  <constructor-arg type="java.lang.String" value="AAA"/>
+ </bean>
+ 
+ <bean id="product5" class="CaseStudy1.OnlineShoping.Product">
+ <constructor-arg type="java.lang.String" value="Trouser"/>
+ <constructor-arg type="double" value="1700"/>
+ <constructor-arg type="int" value="11"/>
+  <constructor-arg type="java.lang.String" value="BBB"/>
+ </bean>
+ 
+ <bean id="product6" class="CaseStudy1.OnlineShoping.Product">
+ <constructor-arg type="java.lang.String" value="Hand Bag"/>
+ <constructor-arg type="double" value="2200"/>
+ <constructor-arg type="int" value="50"/>
+  <constructor-arg type="java.lang.String" value="CCC"/>
+ </bean>
+ 
+ <bean id="cart2" class="CaseStudy1.OnlineShoping.Cart">
+ <property name="total_amount" value="2700"/>
+ <property name="Status" value="true"/>
+ <property name="ConfirmOrder" value="true"/>
+ <property name="productList">
+ <list>
+ <ref bean="product7"/>
+ <ref bean="product8"/>
+ <ref bean="product9"/>
+ </list>
+ </property>
+ </bean>
+ 
+ <bean id="product7" class="CaseStudy1.OnlineShoping.Product">
+ <constructor-arg type="java.lang.String" value="Book"/>
+ <constructor-arg type="double" value="500"/>
+ <constructor-arg type="int" value="60"/>
+  <constructor-arg type="java.lang.String" value="DDD"/>
+ </bean>
+ 
+ <bean id="product8" class="CaseStudy1.OnlineShoping.Product">
+ <constructor-arg type="java.lang.String" value="Pen"/>
+ <constructor-arg type="double" value="20"/>
+ <constructor-arg type="int" value="150"/>
+  <constructor-arg type="java.lang.String" value="EEE"/>
+ </bean>
+ 
+ <bean id="product9" class="CaseStudy1.OnlineShoping.Product">
+ <constructor-arg type="java.lang.String" value="Pencil"/>
+ <constructor-arg type="double" value="10"/>
+ <constructor-arg type="int" value="200"/>
+  <constructor-arg type="java.lang.String" value="FFF"/>
+ </bean>
+ 
+ <bean id="order" class="CaseStudy1.OnlineShoping.Order">
+ <property name="cartList">
+ <list>
+ <ref bean="cart"/>
+ <ref bean="cart1"/>
+ <ref bean="cart2"/>
+ </list>
+ </property>
+ </bean>
+ 
+ </beans>
